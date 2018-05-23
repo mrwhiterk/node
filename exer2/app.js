@@ -18,7 +18,9 @@ function getWeather(location) {
     const request = https.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=${myKey}`, (res) => {
         let body = "";
 
-        res.on('data', data => body += data.toString());
+        res.on('data', (data) => {
+            body += data.toString();
+        });
 
         res.on('end', () => {
             try {
@@ -31,7 +33,10 @@ function getWeather(location) {
             }
         });
     });
-    request.on('error', (err) => console.log('error ', err));
+    
+    request.on('error', (err) => {
+        console.log(err);
+    });
 }
 
 

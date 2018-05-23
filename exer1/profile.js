@@ -14,7 +14,7 @@ function printMessage(username, badgeCount, points, subject) {
     console.log(message);
 }
 
-function get(username) {
+function getProfile(username) {
     try {
         // connect to api url (https://teamtreehouse.com/ryanwhite89.json)
         const request = https.get(`https://teamtreehouse.com/${username}.json`, (res)  => {
@@ -51,4 +51,4 @@ function get(username) {
     }
 }
 
-module.exports.get = get;
+module.exports.get = getProfile;
