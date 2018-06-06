@@ -8,8 +8,8 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/hello', (req, res) => {
-    res.send('<h1>hello javascript developer</h1>')
+app.get('/cards', (req, res) => {
+    res.render('card', { prompt: "Who is buried in Grant's tomb?", hint: "Think about whose tomb it is."})
 })
 
 app.listen(process.env.PORT, () => {
